@@ -15,7 +15,7 @@ const ListContainer = styled.div`
 `
 // 73fce80abcdc27f99e700a531b0d5b58
 export default function ListPage() {
-    const { data, hasMore, loadMore } = useUpcomingMovies();
+    const { data, hasMore, fetchData } = useUpcomingMovies();
 
     return (
         <>
@@ -23,7 +23,7 @@ export default function ListPage() {
 
             <InfiniteScroll
                 dataLength={data?.length || 0}
-                next={loadMore}
+                next={fetchData}
                 hasMore={hasMore}
                 loader={<h4>Loading...</h4>}
             >
